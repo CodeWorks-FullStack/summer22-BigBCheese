@@ -1,0 +1,9 @@
+/* BASIC STYLES HERE */
+body {
+  font-family: 'Baloo 2', cursive;
+
+  background-image: url('https://wrkhrs.co/wp-content/uploads/2020/01/wrkhrsco-mood-rats9.png');
+  background-size: 85vh;
+  background-repeat: no-repeat no-repeat;
+  background-position: 88% 5vh;
+}

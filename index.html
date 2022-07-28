@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>🐀 Big B Cheese</title>
+</head>
+
+<body class="bg-danger">
+  <header>
+    <nav class="navbar navbar-light navbar-expand bg-light text-danger no-select elevation-4">
+      <a class="navbar-brand ms-3" href="#">
+        <span class="ms-2 fs-2 fw-bold text-danger"><i class="mdi mdi-cheese text-warning"></i> Big B Cheese</span>
+      </a>
+    </nav>
+  </header>
+  <main>
+    <div class="container-fluid mt-5">
+      <section class="row">
+        <!-- SECTION Booking -->
+        <div class="col-4">
+          <div id="booking-form" class="row m-2">
+            <div class="col-12 bg-white rounded elevation-2 p-4">
+              <h4>Book Your Party Today</h4>
+              <form class="row" id="form" onsubmit="app.partiesController.createParty()">
+                <div class="mb-3 col-12">
+                  <label for="name" class="form-label">Name For Party</label>
+                  <!-- NOTE minlength and required are used to make sure form data is there and good -->
+                  <input name="name" id="name" type="text" minlength="4" required class="form-control"
+                    aria-describedby="helpId" placeholder="enter the name of the birthday person">
+                </div>
+                <div class="mb-3 col-12">
+                  <label for="size" class="form-label">Size of Party</label>
+                  <input name="size" id="size" type="number" min="5" value="5" required class="form-control"
+                    aria-describedby="helpId" placeholder="">
+                </div>
+                <div class="mb-3 col-6">
+                  <label for="date" class="form-label">Date</label>
+                  <input name="date" id="date" type="date" required class="form-control" aria-describedby="helpId"
+                    placeholder="">
+                </div>
+                <div class="mb-3 col-6">
+                  <label for="bringTheRat" class="form-label">Do you want Benedict The Rat?</label>
+                  <!-- NOTE required on checkbox means the box MUST be checked to submit -->
+                  <input name="bringTheRat" id="bringTheRat" type="checkbox" checked aria-describedby="helpId">
+                </div>
+                <div class="mb-3 col-12">
+                  <label for="accommodations" class="form-label">Custom Accommodations</label>
+                  <textarea name="accommodations" id="accommodations" class="form-control" aria-describedby="helpId"
+                    placeholder=""></textarea>
+                </div>
+                <button class="btn btn-danger">Book!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- SECTION parties -->
+        <div class="col-8">
+          <section id="parties" class="row">
+            <!-- STUB  party template-->
+            <div class="col-12 p-2">
+              <div class="bg-white elevation 2">
+                <section class="row">
+                  <h3>Party Name</h3>
+                  <h4><i class="mdi mdi-account-group"></i>12</h4>
+                  <i class="mdi mdi-trash"></i>
+                </section>
+                <section class="row">
+                  <!-- STUB item template -->
+                  <div class="col-12 d-flex justify-content-between">
+                    <p>👥</p>
+                    <p>body</p>
+                    <p>$30</p>
+                    <i class="mdi mid-delete-forever selectable"></i>
+                  </div>
+                  <!--  -->
+                </section>
+                <form class="row px-4 py-2">
+                  <div class="col-1 btn btn-primary">+</div>
+                  <div class="col-3">
+                    <select name="type" id="type">
+                      <option value="👥">👥</option>
+                      <option value="🍕">🍕</option>
+                      <option value="🎈">🎈</option>
+                    </select>
+                  </div>
+                  <div class="col-4">
+                    <input class="form-control" type="text" name="body" id="body">
+                  </div>
+                  <div class="col-3">
+                    <input class="form-control" type="number" name="price" , id="price">
+                  </div>
+                  <div class="col-1 text-center p-2 text-danger selectable"><i class="mdi mdi-delete-forever"></i></div>
+                </form>
+              </div>
+            </div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <!--  -->
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="bg-dark text-light">
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
